@@ -11,7 +11,7 @@
 import qrcode
 
 input_URL = "https://www.bilibili.com/"
-img_file = r'my_qrcode'
+img_file = r'../out/02pro.png'
 
 # 实例化QRCode 生成qr对象
 qr = qrcode.QRCode(

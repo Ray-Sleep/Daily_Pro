@@ -11,7 +11,7 @@
 import cv2
 import sys
 
-img = sys.path[0] + '/image/lena.png'
+img = '../image/lena.png'
 
 color_image = cv2.imread(img)
 
