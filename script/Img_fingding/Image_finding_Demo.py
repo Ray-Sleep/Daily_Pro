@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 """
 @Project : Daily_Pro 
-@File    : Image finding.py
+@File    : Image_finding_Demo.py
 @IDE     : PyCharm 
 @Author  : 李睡睡
 @Date    : 2023/1/28 6:43 
@@ -64,4 +64,4 @@ def  routine(img_model_path,name):
     auto_click(avg)
 
 
-routine("./img/target01.png","目标")
+routine("img/target01.png", "目标")
