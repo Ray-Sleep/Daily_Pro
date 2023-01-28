@@ -16,7 +16,7 @@ img = '../image/lena.png'
 color_image = cv2.imread(img)
 
 while True:
-    cartoon_style_selection = input("This script has 2 styles. Please type 1 or 2:")
+    cartoon_style_selection = input("This Script_demo has 2 styles. Please type 1 or 2:")
 
     if cartoon_style_selection == "1":
         # Cartoonify process
