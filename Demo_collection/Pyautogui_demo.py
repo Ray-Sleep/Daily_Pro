@@ -10,12 +10,10 @@
 @Function: 
 @Tips    :不要左顾右盼。慢慢积累，慢慢写吧。毕竟除了这样单调的努力，我什么也做不了。
 """
-import pyautogui
+import pyautogui as pyg
 import cv2
 import time
-
-x,y = pyautogui.size()
-print(x,y)
+import pandas as pd
 
 """
     1.通过截图找到输入框坐标
@@ -39,7 +37,7 @@ def get_xy(img_model_path):
         method：要使用的数据比较方法
     """
     # 将截图保存
-    pyautogui.screenshot().save('./image/screenshot.png')
+    pyg.screenshot().save('./image/screenshot.png')
     # 载入截图
     img = cv2.imread('./image/screenshot.png')      # 屏幕截图路径
     # 图像模板
@@ -63,10 +61,9 @@ def auto_click(var_avg):
     :param var_avg: 左边元组
     :return: None
     """
-    pyautogui.click(var_avg[0],var_avg[1],button="left")
+    pyg.click(var_avg[0],var_avg[1],button="left")
     # 睡眠操作：等待界面跳转
     time.sleep(1)
-
 
 def openreadtxt(file_name):
     data = []
@@ -74,10 +71,9 @@ def openreadtxt(file_name):
     file_data = file.readlines() #读取所有行
     for row in file_data:
         tmp_list = row.split(' ') #按‘，’切分每行的数据
-        #tmp_list[-1] = tmp_list[-1].replace('\n',',') #去掉换行符
+        tmp_list[-1] = tmp_list[-1].replace('\n',',') #去掉换行符
         data.append(tmp_list) #将每行数据插入data中
     return data
-
 
 # 封装方法
 def  routine(img_model_path,name):
@@ -85,5 +81,12 @@ def  routine(img_model_path,name):
     print(f"正在点击{name}")
     auto_click(avg)
 
-routine("img/target01.png", "微信聊天框")
-print(openreadtxt('./include/information.txt'))
+def read_tablemethod(filename):
+    data = pd.read_table(filename, delim_whitespace=True)
+    return data
+
+
+if __name__ == "__main__":
+    routine("img/target01.png", "微信聊天框")
+    data = read_tablemethod('./include/information.txt')
+    print(data)
