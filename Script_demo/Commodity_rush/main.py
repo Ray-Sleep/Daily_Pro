@@ -7,7 +7,7 @@
 @Date    : 2023/4/27 1:15
 @Scripts :
 @Documentation:
-@Function: 
+@Function: 抢购商品
 @Tips    :不要左顾右盼。慢慢积累，慢慢写吧。毕竟除了这样单调的努力，我什么也做不了。
 """
 
